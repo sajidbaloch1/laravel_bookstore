@@ -36,6 +36,7 @@
       </div>
     </div>
   </section>
+  <h1 class="text-center">Hi Laravel</h1>
   
   
   
