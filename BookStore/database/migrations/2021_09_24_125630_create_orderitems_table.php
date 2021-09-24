@@ -15,6 +15,9 @@ class CreateOrderitemsTable extends Migration
     {
         Schema::create('orderitems', function (Blueprint $table) {
             $table->id();
+            $table->integer('order_id');
+            $table->integer('book_id');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
