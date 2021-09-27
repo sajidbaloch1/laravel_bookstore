@@ -10,7 +10,11 @@ class booksController extends Controller
 {
     //
     function index(){
-        return view('books.index', ['books'=>book::all()], ['categories'=>category::all()]);
+        return view('books.index', ['books'=>book::all(),'categories'=>category::all()]);
         ;
+    }
+
+    function bookdetail($id){
+        return view('books.bookdetail',['book'=>book::findOrFail($id)]);
     }
 }
