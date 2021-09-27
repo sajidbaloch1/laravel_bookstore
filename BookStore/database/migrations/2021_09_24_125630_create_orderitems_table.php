@@ -15,10 +15,14 @@ class CreateOrderitemsTable extends Migration
     {
         Schema::create('orderitems', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id');
-            $table->integer('book_id');
+            $table->foreignId('order_id');
+            $table->foreignId('book_id');
             $table->integer('quantity');
             $table->timestamps();
+
+
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('book_id')->references('id')->on('books');
         });
     }
 
