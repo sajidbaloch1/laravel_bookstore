@@ -31,7 +31,7 @@
       @foreach ($books as $book)
       @if ($category->id === $book->category->id)
       <div class="col-lg-3 text-center my-3">
-        <a href="{{ route('book-detail', $book->id) }}">
+        <a href="{{ route('book-detail', $book->id) }}" style="text-decoration: none">
             <div class="card">
         <div class="card-header">
           <h6> Name: {{ $book->name }}</h6>

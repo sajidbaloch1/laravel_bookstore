@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\booksController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ use App\Http\Controllers\booksController;
 // });
 Route::get('/',[booksController::class,'index']);
 Route::get('/book/detail/{id}',[booksController::class,'bookdetail'])->name('book-detail');
+Route::get('/cart-page',[CartController::class,'index'])->name('cart-page');
 Route::get('/about', function () {
     return view('books.about');
 });

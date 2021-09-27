@@ -3,7 +3,7 @@
     @section('content')
 <div class="container my-5">
     <div class="row">
-        <div class="col-lg-6 border">
+        <div class="col-lg-6 ">
     <img src="{{ asset($book->image) }}" style="height: 500px; width:400px;" class="rounded"   alt="">
 </div>
 <div class="col-lg-6 ">
