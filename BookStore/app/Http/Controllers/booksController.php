@@ -10,7 +10,7 @@ class booksController extends Controller
 {
     //
     function index(){
-        return view('books.index', ['books'=>book::all(),'categories'=>category::all()]);
+        return view('books.index', ['books'=>book::get(),'categories'=>category::get()]);
         ;
     }
 
