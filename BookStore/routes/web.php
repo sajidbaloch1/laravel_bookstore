@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\booksController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,22 +17,17 @@ use App\Http\Controllers\CartController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('books.book');
-// });
+
 Route::get('/',[booksController::class,'index']);
 Route::get('/book/detail/{id}',[booksController::class,'bookdetail'])->name('book-detail');
 Route::get('/cart-page',[CartController::class,'index'])->name('cart-page');
+Route::get('/login',[LoginController::class,'login'])->name('login');
+Route::get('/signup',[SignupController::class,'signup'])->name('signup');
 Route::get('/about', function () {
     return view('books.about');
 });
 Route::get('/contact', function () {
     return view('books.contact');
 });
-Route::get('/logon', function () {
-    return view('login.logon');
-});
-Route::get('/singup', function () {
-    return view('login.singup');
-});
+
 

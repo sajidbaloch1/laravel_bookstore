@@ -44,10 +44,10 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link text-dark fs-5" href="{{ url('/logon') }}">Login</a>
+    <a class="nav-link text-dark fs-5" href="{{ route('login') }}">Login</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark fs-5" href="{{ url('/singup') }}">Sign Up</a>
+    <a class="nav-link text-dark fs-5" href="{{ route('signup') }}">Sign Up</a>
   </li>
     
     <li class="nav-item">
