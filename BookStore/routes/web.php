@@ -13,9 +13,7 @@ use App\Http\Controllers\booksController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('books.book');
-// });
+
 Route::get('/',[booksController::class,'index']);
 Route::get('/book/detail/{id}',[booksController::class,'bookdetail'])->name('book-detail');
 Route::get('/about', function () {
