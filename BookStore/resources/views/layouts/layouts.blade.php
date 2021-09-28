@@ -21,7 +21,7 @@
             <h1 class="text-light">Book<span class="fw-light text-danger">Store</span></h1>
         </div>
         <div class="col-lg-4 col-4">
-        <a href="p"><i class="fas fa-shopping-cart float-end mt-3 fs-4 text-warning"> <span class="total-item badge rounded-pill position-absolute top-0 start-100 translate-middle" style="background-color: #f4a56d;"></span></i></a>
+        <a href="{{ route('cart-page') }}"><i class="fas fa-shopping-cart float-end mt-3 fs-4 text-warning"> <span class="total-item badge rounded-pill position-absolute top-0 start-100 translate-middle" style="background-color: #f4a56d;"></span></i></a>
         </div>
     </div>
 </div>
@@ -44,10 +44,10 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link text-dark fs-5" href="{{ url('/logon') }}">Login</a>
+    <a class="nav-link text-dark fs-5" href="{{ route('login') }}">Login</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-dark fs-5" href="{{ url('/singup') }}">Sign Up</a>
+    <a class="nav-link text-dark fs-5" href="{{ route('signup') }}">Sign Up</a>
   </li>
     
     <li class="nav-item">
