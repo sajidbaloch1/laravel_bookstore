@@ -23,7 +23,37 @@
   </div>
   
   <!-- slider End -->
-
+  <!-- Book Listing Start -->
+  @foreach ($categories as $category)
+  <h1 class="text-center fw-light border mt-5">{{$category->name}}</h1>
+  <div class="container my-5">
+    <div class="row">
+      @foreach ($books as $book)
+      @if ($category->id === $book->category->id)
+      <div class="col-lg-3 text-center my-3">
+        <a href="{{ route('book-detail', $book->id) }}">
+            <div class="card">
+        <div class="card-header">
+          <h6> Name: {{ $book->name }}</h6>
+        </div>
+        <div class="card-body ps-5">
+          <img src="{{$book->image }}" alt="">
+        </div>
+        <div class="card-footer">
+          <p class="text-danger"> <span class="text-success fw-bold">Rs </span>{{ $book->price }} <br>
+         <span class="text-dark fw-bold"> {{ $book->author->name }}</span></p>
+         <input type="number" class="form-control my-2" name="quantity">
+         <button class="btn btn-primary btn-sm">Add To Cart</button>
+        </div>
+      </div>
+    </a>
+    </div>
+    @endif
+    @endforeach
+  </div>
+</div>
+@endforeach
+  <!-- Book Listing End -->
   </section>
   
   <section class="section text-center my-5">
@@ -36,7 +66,9 @@
       </div>
     </div>
   </section>
-  <h1 class="text-center">Hi Laravel</h1>
+
+
+  
   
   
   
@@ -73,4 +105,6 @@
       </div>
     </div>
   </section>
+
+  
 @endsection
