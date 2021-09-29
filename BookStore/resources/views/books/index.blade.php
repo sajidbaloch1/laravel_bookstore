@@ -42,7 +42,7 @@
         <div class="card-footer">
           <p class="text-danger"> <span class="text-success fw-bold">Rs </span>{{ $book->price }} <br>
          <span class="text-dark fw-bold"> {{ $book->author->name }}</span></p>
-         <input type="number" class="form-control my-2" name="quantity">
+         <input type="number" class="form-control my-2" name="quantity" value="1">
          <button class="btn btn-primary btn-sm">Add To Cart</button>
         </div>
       </div>
