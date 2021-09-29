@@ -38,26 +38,15 @@
     <!-- nav start -->
     <div class="container my-3">
         <ul class="nav justify-content-center">
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link active text-dark fs-5" aria-current="page" href="{{ url('/') }}">Home</a>
-                </li>
-            @endguest
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link text-dark fs-5" href="">Product</a>
-                </li>
-            @endguest
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link text-dark fs-5" href="{{ url('/about') }}">About Us</a>
-                </li>
-            @endguest
-            @guest
-                <li class="nav-item">
-                    <a class="nav-link text-dark fs-5" href="{{ url('/contact') }}">Contact Us</a>
-                </li>
-            @endguest
+            <li class="nav-item">
+                <a class="nav-link active text-dark fs-5" aria-current="page" href="{{ url('/') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fs-5" href="{{ url('/about') }}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark fs-5" href="{{ url('/contact') }}">Contact Us</a>
+            </li>
             @guest
                 <li class="nav-item">
                     <a class="nav-link text-dark fs-5" href="{{ route('login') }}">Login</a>
@@ -68,17 +57,18 @@
                     <a class="nav-link text-dark fs-5" href="{{ route('signup') }}">Sign Up</a>
                 </li>
             @endguest
-            @auth
-                <li class="nav-item">
-                    <a class="nav-link text-dark fs-5" href="">LOG OUT</a>
-                </li>
-            @endauth
-            @auth
-                <li class="nav-item">
-                    <a class="nav-link text-dark fs-5" href="">MY ORDERS</a>
-                </li>
-            @endauth
-
+            @if (empty(session('user')))
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="{{ route('logout') }}">LOG OUT</a>
+                    </li>
+                @endauth
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-5" href="">MY ORDERS</a>
+                    </li>
+                @endauth
+            @endif
         </ul>
     </div>
     <!-- nav End -->
