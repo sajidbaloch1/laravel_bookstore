@@ -24,7 +24,7 @@ class CartController extends Controller
     }
     public function deleteCart(Request $req){
         $cartItem  = session()->pull('cartItems',[]);
-        array_splice($cartItem,$req->input('index'),1);
+        array_splice($cartItem,$req->index,1);
         session()->put('cartItems',$cartItem);
     return redirect('/cart-page');
 

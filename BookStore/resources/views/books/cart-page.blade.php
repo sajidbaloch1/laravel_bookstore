@@ -2,8 +2,6 @@
 @section('title', 'Cart')
 @section('content')
     @php
-    $id = 1;
-    $index = 0;
     $total_items = 0;
     $total_amount = 0;
     @endphp
@@ -13,10 +11,10 @@
                 <h5 class="mb-3">Cart</h5>
                 <div class="row">
                 @if (Session::has('cartItems'))
-                @if (null == session('cartItems'))
-                <p>Your Cart is Empty</p>
+                @if ( session('cartItems') == null)
+                    <p>Your cart is empty</p>
                 @endif
-                @foreach (session('cartItems') as $cart_item)
+                @foreach (session('cartItems') as $index => $cart_item)
                     <div class="col-12 ">
                         <div class="card mb-3">
                             <div class="card-body">
@@ -24,16 +22,16 @@
                                         <div class="col-3"></div>
                                         <div class="col-9"></div>
                                 </div>
-                                    <a href="{{ route('delete') }}?index={{ $index++ }}"><button
+                                    <a href="{{ route('delete') }}?index={{ $index }}"><button
                                             class="btn btn-danger">DElETE</button></a>
-                                    <p>{{ $id++ }}</p>
+                                    <p>{{ $index }}</p>
                                     <h5 class="card-title">{{ $cart_item['name'] }}</h5>
                                     <p class="card-text">{{ $cart_item['quantity'] * $cart_item['price'] }}</p>
                                     <img src="{{ $cart_item['image'] }}" height="100px" width="100px" alt="">
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @endforeach                      
                     @endif
                 </div>  
             </div>
@@ -60,7 +58,7 @@
                         <h5 class="card-title">The total amount</h5>
                         <p class="card-text">Total Items : <span class="total-item">{{ $total_items }}</span></p>
                         <p class="card-text">Total Price : Rs <span
-                                class="total-cart">{{ $total_amount }}<span>.00 </p>
+                                class="total-cart">{{ $total_amount }}<span> </p>
                         <p class="card-text"></p>
                         <form action="order.php" method="POST">
                             <a><input type="submit" class="btn btn-success rounded" value="Order Now"></a>
