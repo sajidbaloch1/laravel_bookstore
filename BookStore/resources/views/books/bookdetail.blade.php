@@ -12,8 +12,15 @@
 <br><br>    <p class=""><span class="text-success ps-5"> RS :</span>{{ $book->price }}</p>
 <br><br>
 <p class="ms-5">{{ $book->discreption }}</p>
+<form action="" method="POST">
 <input type="number" name="quantity" placeholder="Quantity" value="1" class="form-control col-6 form-sm ms-5 my-5" style="width: 300px">
 <button class="btn btn-success col-6 btn-block ms-5 m-2">Add To Cart</button>
+<input type="hidden" name="id" value="{{ $book->id }}">
+<input type="hidden" name="name" value="{{ $book->name }}">
+<input type="hidden" name="author_name" value="{{ $book->author->name }}">
+<input type="hidden" name="image" value="{{ $book->image }}">
+<input type="hidden" name="price" value="{{ $book->price }}">
+</form>
 </div>
 </div>
 </div>
