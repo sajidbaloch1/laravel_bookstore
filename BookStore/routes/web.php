@@ -26,6 +26,8 @@ Route::get('/signup',[SignupController::class,'signup'])->name('signup');
 Route::post('/sungup-confirmed',[SignupController::class,'signupConfirmed'])->name('signup-confirmed');
 Route::post('/login-confirmed',[LoginController::class,'loginConfirmed'])->name('login-confirmed');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::post('/cart-page/cart-add',[CartController::class,'addToCart'])->name('cart-add');
+Route::post('/cart-page/delete',[CartController::class,'deleteCart'])->name('delete');
 Route::get('/about', function () {
     return view('books.about');
 });
