@@ -25,7 +25,6 @@
                                         <form action="{{ route('delete') }}" method="POST">
                                             @csrf
                                             @method('POST')
-
                                             <input type="hidden" value="{{ $index++ }}">
                                             <button class="btn btn-danger">DElETE</button>
                                         </form>
