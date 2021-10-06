@@ -51,7 +51,7 @@
                             <form action="{{ route('cart-add') }}" method="POST">
                                 @csrf
 
-                                <input type="number" class="form-control my-2" name="quantity" value="1">
+                                <input type="number" class="form-control text-center my-2" name="quantity" value="1">
                                 <button class="btn btn-primary btn-sm">Add To Cart</button>
                                 <input type="hidden" name="id" value="{{ $book->id }}">
                                 <input type="hidden" name="name" value="{{ $book->name }}">

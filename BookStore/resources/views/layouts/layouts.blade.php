@@ -65,7 +65,7 @@
                 @endauth
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link text-dark fs-5" href="">MY ORDERS</a>
+                        <a class="nav-link text-dark fs-5" href="{{ route('my-orders') }}">MY ORDERS</a>
                     </li>
                 @endauth
             @endif
