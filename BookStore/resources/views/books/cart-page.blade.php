@@ -58,7 +58,7 @@
                         <p class="card-text">Total Price : Rs <span class="total-cart">{{ $total_amount }}<span>
                         </p>
                         <p class="card-text"></p>
-                        @if (!empty(session('user')))
+                        @if (empty(session('user')))
                             <form action="{{ route('create') }}" method="GET">
                                 <a><input type="submit" class="btn btn-success rounded" value="Order Now"></a>
                             </form>
