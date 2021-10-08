@@ -47,7 +47,6 @@ class orderController extends Controller
 
     public function orderDetail(Request $req)           {
         $orderItems = orderitem::where('order_id',$req->id)->get();      
-        // echo json_encode($orderItems);exit;
         return view('login.order-detaile',
     [
         'orderItems'=>$orderItems

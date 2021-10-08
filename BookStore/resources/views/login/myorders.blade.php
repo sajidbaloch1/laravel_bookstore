@@ -20,7 +20,7 @@
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $order->total_quantity }}</td>
                     <td>{{ $order->total_ammount }}</td>
-                    <td>{{ $order->created_at->format('d-m-y') }}</td>
+                    <td>{{date('d-m-y'),strtotime($order->created_at)}}</td>
                     <td><a href="{{ route('order-detail', $order->id) }}">View</a></td>
                 </tr>
             @endforeach

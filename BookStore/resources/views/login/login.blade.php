@@ -4,12 +4,11 @@
     <div class="container">
         <h1 class="text-center"
             style="background: rgb(2, 0, 36);
-        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(20, 20, 20, 0.9640231092436975) 35%, rgba(0, 212, 255, 1) 100%); color: white;">
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(20, 20, 20, 0.9640231092436975) 35%, rgba(0, 212, 255, 1) 100%); color: white;">
             LOGIN</h1>
         <div class="row">
             <div class="col-lg-12">
                 @if (session()->has('errors'))
-                    {{ 'hello' }}
                 @endif
                 <form action="{{ route('login-confirmed') }}" method="POST">
                     @csrf
