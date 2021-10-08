@@ -8,6 +8,9 @@
             LOGIN</h1>
         <div class="row">
             <div class="col-lg-12">
+                @if (session()->has('errors'))
+                    {{ 'hello' }}
+                @endif
                 <form action="{{ route('login-confirmed') }}" method="POST">
                     @csrf
                     <div class="form-floating mb-3">

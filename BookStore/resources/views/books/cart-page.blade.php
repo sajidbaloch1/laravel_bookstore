@@ -36,25 +36,19 @@
                                 </div>
                             </div>
                         @endforeach
+                        @php
+                            $total_items = count(session('cartItems'));
+                            $total_amount = array_reduce(
+                                session('cartItems'),
+                                function ($carry, $item) {
+                                    return $carry + $item['quantity'] * $item['price'];
+                                },
+                                0,
+                            );
+                        @endphp
                     @endif
                 </div>
             </div>
-            @php
-                $total_items = array_reduce(
-                    session('cartItems'),
-                    function ($carry, $item) {
-                        return $carry + $item['quantity'];
-                    },
-                    0,
-                );
-                $total_amount = array_reduce(
-                    session('cartItems'),
-                    function ($carry, $item) {
-                        return $carry + $item['quantity'] * $item['price'];
-                    },
-                    0,
-                );
-            @endphp
             <div class="col-lg-4">
                 <h5 class="mb-3" style="color: white;">The total amount</h5>
                 <div class="card">
@@ -64,12 +58,12 @@
                         <p class="card-text">Total Price : Rs <span class="total-cart">{{ $total_amount }}<span>
                         </p>
                         <p class="card-text"></p>
-                        <form action="order.php" method="POST">
-                            <a><input type="submit" class="btn btn-success rounded" value="Order Now"></a>
-                            <input type="hidden" name="total_Amount" value="">
-                            <input type="hidden" name="total_item" value="">
-                        </form>
+                        @if (!empty(session('user')))
+                            <form action="{{ route('create') }}" method="GET">
+                                <a><input type="submit" class="btn btn-success rounded" value="Order Now"></a>
+                            </form>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
